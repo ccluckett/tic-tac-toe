@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vh;
+    height: 40vh;
+}
+
+.cell { 
+    width: 20vh;
+}
+.cell:nth-child(3n+2){
+    border-right:4px black solid;
+    border-left: 4px black solid;
+}
+.cell:nth-child(n+4):nth-child(-n+6){
+    border-top:4px black solid;
+    border-bottom: 4px black solid;
+}
