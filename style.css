@@ -1,22 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 * {
     box-sizing: border-box;
+    color: white;
+    background-color: black;
+    font-family: delicious Handrawn ,'Times New Roman', Times, serif;
+    font-size: 35px;
+    padding: 0;
+    text-align: center;
 }
-
 main {
     display: flex;
     flex-wrap: wrap;
     width: 60vh;
     height: 40vh;
+   
+} 
+h1 {
+    padding-top: 1rem;
 }
 
 .cell { 
     width: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle; 
 }
 .cell:nth-child(3n+2){
-    border-right:4px black solid;
-    border-left: 4px black solid;
+    border-right:4px white solid;
+    border-left: 4px white solid;
 }
 .cell:nth-child(n+4):nth-child(-n+6){
-    border-top:4px black solid;
-    border-bottom: 4px black solid;
+    border-top:4px white solid;
+    border-bottom: 4px white solid;
 }
+
+#board {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+
+} 
