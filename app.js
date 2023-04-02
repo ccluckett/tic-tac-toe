@@ -43,8 +43,6 @@ const renderPlayer = () => {
     <button id = "start"> Play </button>`;
   } else {
     playerElemHTML = `Its currently ${state.players[state.currentPlayerIdx]}'s turn.`;
-    // state.currentPlayerIdx = Math.abs(state.currentPlayerIdx -1);
-    //console.log(state.players[state.currentPlayerIdx]);
   }
   
   playerElem.innerHTML = playerElemHTML;
@@ -66,21 +64,9 @@ function nextTurn() {
   if (index === characterArr.length) index = 0;
   const nextElem = characterArr[index];
   index++;
-  // console.log(nextElem);
   return nextElem;
 }
 
-
-
-/*const playersArr = [state.players];
-let i = 0;
-function currentPlayer() {
-  if (i === playersArr.length) i = 0;
-  const nextElem = playersArr[i];
-  i++;
-  console.log(nextElem);
-  return nextElem; 
-} */
 
 // Board Element //
 
@@ -164,7 +150,7 @@ board.addEventListener('click', (event) => {
     state.board[cellIndx] = characterArr[state.currentPlayerIdx]; 
     event.target.innerText = characterArr[state.currentPlayerIdx];
     state.currentPlayerIdx = 1 - state.currentPlayerIdx;
-    //state.getCurrentCharacter = nextTurn();
+   
     renderPlayer();
     findWinner();
   }
@@ -175,11 +161,10 @@ playerElem.addEventListener('click', (event) => {
   if(event.target.id === 'start' ){
     const player1Field = document.querySelector ('input[name = "player1"]');
     state.players[0] = player1Field.value;
-   // console.log(state.players[0]);
+   
    
     const player2Field = document.querySelector ('input[name = "player2"]');
     state.players[1] = player2Field.value;
-    //state.getCurrentPlayer = currentPlayer();
     renderPlayer();
   }
 }); 
